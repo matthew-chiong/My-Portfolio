@@ -17,30 +17,33 @@ body {
   font-family: var(--fontFamily);
 }
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid black;
-  width: 95%;
+  width: 85%;
   height: 90%;
   margin: 0 auto;
 }
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0 7.5vw;
+  width: 50%;
+  margin: 50px 0 50px;
+  position: relative;
 }
 header button {
   border: none;
   background-color: transparent;
-  font-size: 10px;
-  font-weight: 500;
-  height: 100%;
-  position: relative;
+  font-size: 0.75rem;
+  font-weight: 600;
+  height: 1rem;
+  position: absolute;
+  bottom: -3rem;
   cursor: pointer;
 }
 header button.current-btn::after {
   content: "";
   position: absolute;
-  height: 1.5px;
+  height: 2px;
   width: 100%;
   background-color: black;
   left: 0;
@@ -48,23 +51,34 @@ header button.current-btn::after {
   border-radius: 5px;
 }
 .logo {
-  width: 200px;
-  margin: 0 40px;
+  width: 100%;
+  position: relative;
+}
+.about-btn {
+  left: 1rem;
+}
+.portfolio-btn {
+  right: 1rem;
 }
 main {
   display: flex;
   justify-content: center;
+  margin-top: 65px;
   align-items: center;
 }
 .about {
   display: none;
   width: 30ch;
-  font-size: 10px;
+  font-size: 0.75rem;
   text-align: center;
-  line-height: 1.2rem;
+  line-height: 1.3rem;
+  animation-name: move;
+  animation-duration: 1s;
 }
 .portfolio {
   display: none;
+  animation-name: move;
+  animation-duration: 1s;
 }
 .portfolio-projects {
   display: flex;
@@ -81,16 +95,29 @@ main {
 .portfolio-projects li:hover {
   opacity: 0.4;
 }
-.portfolio-projects li span {
-  display: block;
-  font-size: 0.55rem;
-  font-weight: 700;
-  font-style: italic;
-}
 .portfolio-projects li a {
   text-decoration: none;
   color: black;
+  font-size: 1.3rem;
+}
+.portfolio-projects li span {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  font-style: italic;
 }
 .current-sec {
   display: block;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
