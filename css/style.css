@@ -92,9 +92,7 @@ main {
   cursor: pointer;
   transition: opacity 250ms ease;
 }
-.portfolio-projects li:hover {
-  opacity: 0.4;
-}
+
 .portfolio-projects li a {
   text-decoration: none;
   color: black;
