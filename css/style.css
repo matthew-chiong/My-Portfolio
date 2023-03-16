@@ -22,7 +22,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   border: 1px solid black;
-  width: 85%;
+  width: 83%;
   height: 90%;
   margin: 0 auto;
 }
@@ -50,6 +50,9 @@ header button.current-btn::after {
   left: 0;
   bottom: -2px;
   border-radius: 5px;
+  animation: spread;
+  animation-duration: 400ms;
+  animation-timing-function: ease-out;
 }
 .logo {
   width: 100%;
@@ -136,12 +139,19 @@ main {
 }
 
 @media only screen and (min-width: 720px) {
+  .wrapper {
+    width: 86.5%;
+    height: 87%;
+  }
   header {
     width: 40%;
   }
   header button {
     font-size: 0.9rem;
     bottom: -3rem;
+  }
+  header button.current-btn::after {
+    bottom: -3px;
   }
   .about {
     font-size: 0.85rem;
@@ -153,15 +163,13 @@ main {
   .portfolio-projects li span {
     font-size: 0.85rem;
   }
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60%;
-  }
 }
 
 @media only screen and (min-width: 1024px) {
+  .wrapper {
+    width: 90%;
+    height: 87%;
+  }
   header {
     display: flex;
     justify-content: center;
@@ -171,28 +179,58 @@ main {
     margin: 0;
   }
   .logo {
-    width: 25%;
+    width: 30%;
     position: initial;
   }
   header button {
     font-size: 0.9rem;
     position: relative;
   }
+  header button.current-btn::after {
+    bottom: -4px;
+  }
   .about {
     font-size: 0.9rem;
     line-height: 1.8rem;
   }
   .portfolio-projects li a {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
   .portfolio-projects li span {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 40%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .wrapper {
+    width: 93%;
+    height: 88%;
+  }
+  .logo {
+    width: 25%;
+    position: initial;
+  }
+  header button {
+    font-size: 1rem;
+    position: relative;
+  }
+  header button.current-btn::after {
+    bottom: -5px;
+  }
+  .about {
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+  }
+  .portfolio-projects li a {
+    font-size: 2rem;
+  }
+  .portfolio-projects li span {
+    font-size: 1rem;
+  }
+  main {
+    height: 35%;
   }
 }
 
@@ -206,5 +244,16 @@ main {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes spread {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
   }
 }
