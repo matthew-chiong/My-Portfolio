@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border: 1px solid black;
   width: 85%;
   height: 90%;
@@ -65,7 +65,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 50%;
 }
 .about {
   display: none;
@@ -109,6 +109,94 @@ main {
 .current-sec {
   display: block;
 }
+
+/* ! MEDIA ---------------------------------------------- */
+
+@media only screen and (min-width: 480px) {
+  header button {
+    font-size: 0.8rem;
+    bottom: -3.5rem;
+  }
+  .about {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+  .portfolio-projects li a {
+    font-size: 1.4rem;
+  }
+  .portfolio-projects li span {
+    font-size: 0.75rem;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  header {
+    width: 40%;
+  }
+  header button {
+    font-size: 0.9rem;
+    bottom: -3rem;
+  }
+  .about {
+    font-size: 0.85rem;
+    line-height: 1.8rem;
+  }
+  .portfolio-projects li a {
+    font-size: 1.5rem;
+  }
+  .portfolio-projects li span {
+    font-size: 0.85rem;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    display: flex;
+    justify-content: center;
+    position: initial;
+    width: 100%;
+    column-gap: 10%;
+    margin: 0;
+  }
+  .logo {
+    width: 25%;
+    position: initial;
+  }
+  header button {
+    font-size: 0.9rem;
+    position: relative;
+  }
+  .about {
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+  }
+  .portfolio-projects li a {
+    font-size: 1.7rem;
+  }
+  .portfolio-projects li span {
+    font-size: 0.85rem;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+  }
+}
+
+/* ! KEYFRAMES ---------------------------------------------- */
 
 @keyframes move {
   from {
