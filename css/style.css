@@ -20,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid black;
   width: 85%;
   height: 90%;
@@ -63,8 +64,8 @@ header button.current-btn::after {
 main {
   display: flex;
   justify-content: center;
-  margin-top: 65px;
   align-items: center;
+  height: 100%;
 }
 .about {
   display: none;
