@@ -8,7 +8,40 @@
 :root {
   --fontFamily: "Montserrat", sans-serif;
 }
-
+.dark-mode {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 1.2%;
+  left: 0;
+  margin-left: 8.5%;
+  font-size: 0.6rem;
+  column-gap: 5%;
+  width: 150px;
+}
+.light-dark-switch {
+  width: 30px;
+  height: 18px;
+  border: 1px solid black;
+  border-radius: 50px;
+  position: relative;
+}
+.light-dark-switch::after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background-color: transparent;
+  border-radius: 50px;
+  top: 0px;
+  left: -45.5%;
+  box-shadow: 15px 2px 0 0 black;
+  transition: left 450ms ease, box-shadow 450ms ease;
+}
+.light-dark-switch.dark::after {
+  left: 24%;
+  box-shadow: 6.5px 2px 0 0 black;
+}
 body {
   display: flex;
   justify-content: center;
