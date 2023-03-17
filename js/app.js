@@ -2,7 +2,16 @@ const aboutBtn = document.querySelector(".about-btn");
 const portfolioBtn = document.querySelector(".portfolio-btn");
 const about = document.querySelector(".about");
 const portfolio = document.querySelector(".portfolio");
-const darkMode = document.querySelector(".light-dark-switch");
+const projectsList = document.querySelectorAll(".portfolio-projects li a");
+const projectsSpan = document.querySelectorAll(".portfolio-projects li span");
+const lightDark = document.querySelector(".light-dark-switch");
+const light = document.querySelector(".light");
+const night = document.querySelector(".night");
+const wrapper = document.querySelector(".wrapper");
+const currentBtn = document.querySelector(".current-btn");
+const logoLight = document.querySelector(".logo-light");
+const logoDark = document.querySelector(".logo-dark");
+const body = document.getElementsByTagName("BODY")[0];
 
 aboutBtn.addEventListener("click", (e) => {
   const currentBtn = document.querySelector(".current-btn");
@@ -23,7 +32,36 @@ portfolioBtn.addEventListener("click", (e) => {
   currentSec.classList.remove("current-sec");
   portfolio.classList.add("current-sec");
 });
+lightDark.addEventListener("click", (e) => {
+  lightDark.classList.toggle("dark");
+  light.classList.toggle("dark");
+  night.classList.toggle("dark");
+  body.classList.toggle("dark");
+  wrapper.classList.toggle("dark");
+  about.classList.toggle("dark");
+  portfolioBtn.classList.toggle("dark");
+  aboutBtn.classList.toggle("dark");
+  const projectsArr = Array.from(projectsList);
+  const projectsSpanArr = Array.from(projectsSpan);
 
-darkMode.addEventListener("click", (e) => {
-  darkMode.classList.toggle("dark");
+  if (lightDark.classList.contains("dark")) {
+    logoLight.classList.toggle("dark");
+    logoDark.classList.toggle("dark");
+
+    for (let i = 0; i < projectsArr.length; i++) {
+      projectsArr[i].style.color = "var(--darkModeWhites)";
+    }
+    for (let i = 0; i < projectsSpanArr.length; i++) {
+      projectsSpanArr[i].style.color = "var(--darkModeWhites)";
+    }
+  } else {
+    logoLight.classList.toggle("dark");
+    logoDark.classList.toggle("dark");
+    for (let i = 0; i < projectsArr.length; i++) {
+      projectsArr[i].style.color = "var(--darkMode)";
+    }
+    for (let i = 0; i < projectsSpanArr.length; i++) {
+      projectsSpanArr[i].style.color = "var(--darkMode)";
+    }
+  }
 });
