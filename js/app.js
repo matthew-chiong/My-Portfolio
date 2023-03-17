@@ -45,8 +45,8 @@ lightDark.addEventListener("click", (e) => {
   const projectsSpanArr = Array.from(projectsSpan);
 
   if (lightDark.classList.contains("dark")) {
-    logoLight.classList.toggle("dark");
-    logoDark.classList.toggle("dark");
+    logoLight.style.display = "none";
+    logoDark.style.display = "block";
 
     for (let i = 0; i < projectsArr.length; i++) {
       projectsArr[i].style.color = "var(--darkModeWhites)";
@@ -55,8 +55,8 @@ lightDark.addEventListener("click", (e) => {
       projectsSpanArr[i].style.color = "var(--darkModeWhites)";
     }
   } else {
-    logoLight.classList.toggle("dark");
-    logoDark.classList.toggle("dark");
+    logoLight.style.display = "block";
+    logoDark.style.display = "none";
     for (let i = 0; i < projectsArr.length; i++) {
       projectsArr[i].style.color = "var(--darkMode)";
     }
