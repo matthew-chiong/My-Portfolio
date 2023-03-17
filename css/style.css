@@ -50,12 +50,12 @@
   background-color: transparent;
   border-radius: 50px;
   top: 0px;
-  left: -34%;
+  left: -13px;
   box-shadow: 15px 2px 0 0 black;
   transition: left 1s ease, box-shadow 1s ease;
 }
 .light-dark-switch.dark::after {
-  left: 40%;
+  left: 12.8px;
   box-shadow: 6.5px 2px 0 0 var(--darkModeWhites);
 }
 body {
