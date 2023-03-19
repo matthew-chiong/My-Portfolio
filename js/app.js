@@ -65,5 +65,3 @@ lightDark.addEventListener("click", (e) => {
     }
   }
 });
-let myScreenOrientation = window.screen.orientation;
-myScreenOrientation.lock("portrait");
