@@ -65,3 +65,6 @@ lightDark.addEventListener("click", (e) => {
     }
   }
 });
+if (screen.orientation) {
+  screen.orientation.lock("portrait-primary");
+}
